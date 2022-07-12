@@ -1,0 +1,136 @@
+@import url("http://fonts.cdnfonts.com/css/sf-pro-display");
+
+$main-text-color: #232340;
+$secondary-text-color: #5a5a5c;
+$light-blue: #5468e7;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "SF Pro Display", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-image: url(../assets/images/background.png);
+}
+
+.header {
+  margin-top: 2rem;
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0 3rem;
+    &__logo {
+      & img {
+        height: 1.5rem;
+      }
+    }
+
+    &__links {
+      position: relative;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+
+      & a {
+        padding: 0 1rem;
+        color: $secondary-text-color;
+        &.active::after {
+          content: "2";
+          position: absolute;
+          width: 1rem;
+          top: -1rem;
+          border-radius: 50%;
+          background-color: $light-blue;
+          color: white;
+          text-align: center;
+          font-size: 0.7rem;
+          padding: 0.1rem;
+        }
+      }
+    }
+
+    &__button {
+      input {
+        background-color: rgb(41, 41, 41);
+        color: white;
+        border: 2px solid #1a1a1a;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 600;
+        min-height: 2rem;
+        min-width: 0;
+        width: 11rem;
+        padding: 16px 24px;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  height: 85vh;
+  &__text {
+    padding: 4rem;
+    margin: 0 2rem;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+    h1 {
+      font-size: 5rem;
+      line-height: 5rem;
+      color: $main-text-color;
+    }
+    p {
+      padding-right: 2rem;
+      width: 70%;
+      color: $secondary-text-color;
+    }
+    input {
+      background-color: $light-blue;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      min-height: 2rem;
+      min-width: 0;
+      width: 9rem;
+      padding: 16px 24px;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
+  &__illustration {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    &-back {
+      height: 100%;
+      position: absolute;
+      left: 4rem;
+    }
+    &-front {
+      position: absolute;
+      top: 3rem;
+      right: 4rem;
+      height: 90%;
+    }
+  }
+}
