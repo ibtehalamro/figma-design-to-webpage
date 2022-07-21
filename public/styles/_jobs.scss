@@ -1,0 +1,73 @@
+@import "./colors";
+@import "./common";
+
+.jobs {
+  padding: $large-padding;
+  background: linear-gradient(
+    360deg,
+    rgba(255, 255, 255, 0.0001) 0%,
+    rgba(237, 229, 240, 0.504289) 100%
+  );
+  @extend .row-flex;
+  align-items: stretch;
+  justify-content: space-between;
+  > .left {
+    h1 {
+      font-size: 6.9rem;
+    }
+    p {
+      color: $text-grey-color;
+    }
+    .action   {
+      @extend .row-flex;
+      gap:1rem;
+      & .arrow{
+            background-color: pink;
+      padding: 1rem;
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      }
+  
+    }
+    padding-left: 4rem;
+    @extend .column-flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+  > .right {
+    width: 50%;
+    & .card {
+      height: 16rem;
+      @extend .row-flex;
+      background-color: white;
+      border-radius: 2.5rem;
+      padding: $medium-padding;
+      margin: 1rem;
+      box-shadow: 0rem 0rem 14px 5px #d6d3d3;
+      &__text {
+        flex: 1;
+        @extend .column-flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        > .title p {
+          color: $light-grey-color;
+        }
+      }
+      &__media {
+        flex: 1;
+        &__body {
+          width: fit-content;
+          padding: $small-padding;
+          background-color: $light-blue;
+          border-radius: 2.5rem;
+          > img {
+            width: 150px;
+            filter: drop-shadow(3px 5px 4px #222);
+          }
+        }
+      }
+    }
+  }
+}

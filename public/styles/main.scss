@@ -1,8 +1,12 @@
 @import url("http://fonts.cdnfonts.com/css/sf-pro-display");
+@import "./Animation";
+@import "./footer";
+@import "./colors";
+@import "./contactUs";
+@import "./whoweare";
+@import "./jobs";
+@import "./projects";
 
-$main-text-color: #232340;
-$secondary-text-color: #5a5a5c;
-$light-blue: #5468e7;
 * {
   box-sizing: border-box;
   margin: 0;
@@ -34,7 +38,6 @@ body {
 
     &__links {
       position: relative;
-
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -42,7 +45,7 @@ body {
 
       & a {
         padding: 0 1rem;
-        color: $secondary-text-color;
+        color: $light-grey-color;
         &.active::after {
           content: "2";
           position: absolute;
@@ -100,7 +103,7 @@ body {
     p {
       padding-right: 2rem;
       width: 70%;
-      color: $secondary-text-color;
+      color: $light-grey-color;
     }
     input {
       background-color: $light-blue;
@@ -134,3 +137,8 @@ body {
     }
   }
 }
+
+
+
+
+

@@ -1,0 +1,55 @@
+@import "./colors";
+@import "./common";
+
+.whoWeAre {
+  color: white;
+  background-color: $body-blue;
+  margin: 2rem;
+  padding: $medium-padding;
+  &__title {
+    @extend .row-flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    padding: $medium-padding;
+    > .icon {
+      img {
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
+    > .arrows {
+      @extend .row-flex;
+      align-items: center;
+      justify-content: baseline;
+      gap: 2rem;  
+      > *{  width: 3rem;
+        height: 3rem;
+     }
+      > .selected {
+        border-radius: 50%;
+        background-color: $light-blue;
+        padding: $small-padding; 
+      }
+    }
+  }
+  &__description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    & > * {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+    }
+    > .left {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    > .right {
+      align-items: center;
+    }
+  }
+}

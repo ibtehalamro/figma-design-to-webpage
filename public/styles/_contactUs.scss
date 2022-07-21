@@ -1,0 +1,43 @@
+@import "./colors";
+
+.contactUs {
+  color: white;
+  padding: 2rem;
+  border-radius: 2.5rem;
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5rem;
+    gap: 2rem;
+    border-radius: 2.5rem 2.5rem 0 0;
+    background-color: $light-blue;
+    position: relative;
+    >:nth-child(1)::before {
+      content: 9;
+      position: absolute;
+    }
+  }
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 5rem;
+    gap: 2rem;
+    border-radius: 0 0 2.5rem 2.5rem;
+    background-color: $light-blue;
+
+    &__left {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &__right {
+      & img {
+        width: 6.25rem;
+        height: 6.25rem;
+      }
+    }
+  }
+}

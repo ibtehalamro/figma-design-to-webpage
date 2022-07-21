@@ -1,0 +1,75 @@
+$small-padding: 1rem;
+$medium-padding: 3rem;
+$large-padding: 6rem;
+$x-large-padding: 8rem;
+
+.column-flex {
+  display: flex;
+  flex-direction: column;
+}
+.row-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-centered {
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin arrow($color, $direction) {
+  display: block;
+  background: $color;
+  height: 2px;
+  width: 25px;
+  position: relative;
+  cursor: pointer;
+  &:before,
+  &:after {
+    content: "";
+    background: $color;
+    position: absolute;
+    height: 2px;
+    width: 15px;
+  }
+
+  &:before {
+    @if $direction==left {
+      left: -2px;
+      bottom: 5px;
+    } @else {
+      right: -2px;
+      bottom: -5px;
+    }
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    @if $direction==left {
+      left: -2px;
+      top: 5px;
+    } @else {
+      right: -2px;
+      top: -5px;
+    }
+    transform: rotate(45deg);
+  }
+}
+
+.left-arrow {
+  &.black {
+    @include arrow(black, left);
+  }
+  &.white {
+    @include arrow(white, left);
+  }
+}
+
+.right-arrow {
+  &.black {
+    @include arrow(black, right);
+  }
+  &.white {
+    @include arrow(white, right);
+  }
+}
