@@ -1,0 +1,77 @@
+.callToAction {
+  padding: 0.5rem 7rem;
+  height: 100vh;
+width: 100%;
+  > .elements {
+    z-index: 0;
+    height: 100%;
+width: 100%;
+
+    > * {
+      flex: 1;
+      height: 100%;
+    }
+    background: $light-blue;
+    border-radius: 40px;
+    @extend .row-flex;
+    justify-content: center;
+    position: relative;
+    transform-style: preserve-3d;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 80%;
+      width: 90%;
+      background-color: #d1ecfd;
+      left: -4rem;
+      top: 10%;
+      border-radius: 30px;
+      transform: translateZ(-10px);
+    }
+    .figure {
+      > .logo {
+        position: absolute;
+        top: 10rem;
+        left: 10%;
+        width: 2rem;
+        height: 2rem;
+      }
+      img {
+        height: 100%;
+      }
+    }
+    .text {
+      position: relative;
+      height: 100%;
+      color: white;
+      @extend .column-flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 2rem;
+      img {
+        position: absolute;
+        top: 10%;
+        height: 80%;
+        right: -10%;
+        width: 70%;
+        border-radius: 40px;
+        z-index: -1;
+      }
+      h4 {
+        font-weight: 100;
+      }
+      p {
+        font-size: 64px;
+        font-weight: 700;
+      }
+      input {
+        padding: 1rem 2rem;
+        color: $light-blue;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}

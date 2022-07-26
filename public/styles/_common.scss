@@ -73,3 +73,120 @@ $x-large-padding: 8rem;
     @include arrow(white, right);
   }
 }
+
+.center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.section-title-three-columns {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "logo title .  "
+    ". description rest";
+  > .logo {
+    grid-area: logo;
+    align-self: center;
+    width: 30px;
+  }
+  > .title {
+    grid-area: title;
+  }
+  > .description {
+    grid-area: description;
+  }
+  > .arrows,
+  .button {
+    grid-area: rest;
+    align-self: start;
+  }
+}
+
+.section-title-two-columns {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 2rem;
+  grid-template-areas:
+    "logo title"
+    " description description";
+  > .logo {
+    grid-area: logo;
+    width: 30px;
+    align-self: center;
+  }
+  > .title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    &.blue{color:$light-blue;}
+    &.white{color:white;}
+    &.dark{color:$body-blue;}
+    grid-area: title;
+  }
+  > .description {
+ 
+    &.blue{color:$light-blue;}
+    &.white{color:white;}
+    &.dark{color:$body-blue;}
+    grid-area: description;
+  }
+}
+.arrows {
+  @extend .row-flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 2rem;
+  > * {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  > .selected {
+    border-radius: 50%;
+    background-color: $light-blue;
+    padding: $small-padding;
+  }
+}
+.input-button-shared-style {
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  min-height: 2rem;
+  min-width: 0;
+  font-size: 18px;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+}
+.button {
+  &__blue {
+    input[type="button"] {
+      background: $light-blue;
+      color: white;
+      @extend .input-button-shared-style;
+
+    }
+  }
+  &__white {
+    input[type="button"] {
+      background: white;
+      color: $light-blue;
+      @extend .input-button-shared-style;
+
+    }
+  }
+  &__dark-blue {
+    input[type="button"] {
+      background: $body-blue;
+      color: white;
+      @extend .input-button-shared-style;
+    }
+  }
+}
+
+ 
